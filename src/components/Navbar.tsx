@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { House, AppWindow, DollarSign, Info, LogIn, Apple, Android, Smartphone } from "lucide-react";
+import { House, AppWindow, DollarSign, Info, LogIn, Smartphone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,8 +20,8 @@ export const Navbar = () => {
   ];
 
   const appPages = [
-    { path: "/apps/ios", label: "iOS", icon: Apple },
-    { path: "/apps/android", label: "Android", icon: Android },
+    { path: "/apps/ios", label: "iOS", icon: Smartphone },
+    { path: "/apps/android", label: "Android", icon: Smartphone },
     { path: "/apps/harmonyos", label: "HarmonyOS", icon: Smartphone },
   ];
 
