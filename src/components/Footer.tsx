@@ -1,4 +1,6 @@
 
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+
 export const Footer = () => {
   return (
     <footer className="bg-secondary py-12">
@@ -61,8 +63,22 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="mt-12 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Company Check-Up. All rights reserved.</p>
+        <div className="mt-12 text-center">
+          <div className="flex justify-center space-x-6 mb-6">
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Twitter className="h-5 w-5" />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Linkedin className="h-5 w-5" />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Instagram className="h-5 w-5" />
+            </a>
+          </div>
+          <p className="text-muted-foreground">&copy; {new Date().getFullYear()} Company Check-Up. All rights reserved.</p>
         </div>
       </div>
     </footer>
