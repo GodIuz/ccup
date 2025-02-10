@@ -20,14 +20,6 @@ export const Footer = () => {
                   <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Demo</a>
                 </li>
               </ul>
-              <div className="flex space-x-4">
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Facebook className="h-4 w-4" />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Twitter className="h-4 w-4" />
-                </a>
-              </div>
             </div>
           </div>
           <div>
@@ -44,18 +36,24 @@ export const Footer = () => {
                   <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Security</a>
                 </li>
               </ul>
-              <div className="flex space-x-4">
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Linkedin className="h-4 w-4" />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Instagram className="h-4 w-4" />
-                </a>
-              </div>
             </div>
           </div>
         </div>
         <div className="mt-8 text-center">
+          <div className="flex justify-center space-x-4 mb-4">
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Facebook className="h-4 w-4" />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Twitter className="h-4 w-4" />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Linkedin className="h-4 w-4" />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Instagram className="h-4 w-4" />
+            </a>
+          </div>
           <p className="text-muted-foreground">&copy; {new Date().getFullYear()} Company Check-Up. All rights reserved.</p>
         </div>
       </div>
