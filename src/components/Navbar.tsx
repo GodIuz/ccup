@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { House, AppWindow, DollarSign, Info, LogIn, Smartphone, Menu } from "lucide-react";
+import { House, AppWindow, DollarSign, Info, LogIn, Smartphone, Menu, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,6 +14,7 @@ import { useState } from "react";
 export const Navbar = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAppsOpen, setIsAppsOpen] = useState(false);
 
   const navItems = [
     { path: "/", label: "Home", icon: House },
@@ -60,18 +61,24 @@ export const Navbar = () => {
                 </Link>
               ))}
 
-              <DropdownMenu>
-                <DropdownMenuTrigger className={cn(
-                  "flex items-center space-x-1 text-sm font-medium transition-colors hover:text-primary",
-                  location.pathname.startsWith("/apps") ? "text-primary" : "text-muted-foreground"
-                )}>
+              <DropdownMenu open={isAppsOpen} onOpenChange={setIsAppsOpen}>
+                <DropdownMenuTrigger 
+                  className={cn(
+                    "flex items-center space-x-1 text-sm font-medium transition-colors hover:text-primary cursor-pointer",
+                    location.pathname.startsWith("/apps") ? "text-primary" : "text-muted-foreground"
+                  )}
+                >
                   <AppWindow className="h-4 w-4" />
                   <span>Apps</span>
+                  <ChevronDown className={cn(
+                    "h-4 w-4 transition-transform duration-200",
+                    isAppsOpen ? "rotate-180" : ""
+                  )} />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent align="center">
                   {appPages.map(({ path, label, icon: Icon }) => (
                     <DropdownMenuItem key={path} asChild>
-                      <Link to={path} className="flex items-center space-x-2">
+                      <Link to={path} className="flex items-center space-x-2 w-full">
                         <Icon className="h-4 w-4" />
                         <span>{label}</span>
                       </Link>
@@ -115,18 +122,34 @@ export const Navbar = () => {
                   </Link>
                 ))}
                 <div className="pt-2 border-t">
-                  <p className="text-sm font-medium text-muted-foreground mb-2">Apps</p>
-                  {appPages.map(({ path, label, icon: Icon }) => (
-                    <Link
-                      key={path}
-                      to={path}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="flex items-center space-x-2 p-2 rounded-lg hover:bg-secondary text-muted-foreground"
-                    >
-                      <Icon className="h-4 w-4" />
-                      <span>{label}</span>
-                    </Link>
-                  ))}
+                  <button
+                    onClick={() => setIsAppsOpen(!isAppsOpen)}
+                    className="flex items-center justify-between w-full p-2 text-sm font-medium text-muted-foreground"
+                  >
+                    <div className="flex items-center space-x-2">
+                      <AppWindow className="h-4 w-4" />
+                      <span>Apps</span>
+                    </div>
+                    <ChevronDown className={cn(
+                      "h-4 w-4 transition-transform duration-200",
+                      isAppsOpen ? "rotate-180" : ""
+                    )} />
+                  </button>
+                  {isAppsOpen && (
+                    <div className="pl-4 space-y-2 mt-2">
+                      {appPages.map(({ path, label, icon: Icon }) => (
+                        <Link
+                          key={path}
+                          to={path}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="flex items-center space-x-2 p-2 rounded-lg hover:bg-secondary text-muted-foreground"
+                        >
+                          <Icon className="h-4 w-4" />
+                          <span>{label}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <div className="pt-2 border-t">
                   <a 
@@ -149,3 +172,4 @@ export const Navbar = () => {
     </nav>
   );
 };
+
