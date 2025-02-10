@@ -1,5 +1,5 @@
 
-export const iOS = () => {
+export const IosApp = () => {
   return (
     <div className="min-h-screen bg-background p-8">
       <div className="relative">
