@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import Index from "./pages/Index";
-import { IosApp } from "./pages/apps/iOS";
+import { IosApp } from "./pages/apps/IosApp";
 import { Android } from "./pages/apps/Android";
 import { HarmonyOS } from "./pages/apps/HarmonyOS";
 import Pricing from "./pages/Pricing";
