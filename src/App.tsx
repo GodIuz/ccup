@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import Index from "./pages/Index";
 import { IosApp } from "./pages/apps/IosApp";
 import { Android } from "./pages/apps/Android";
@@ -21,17 +22,20 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-background flex flex-col">
           <Navbar />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/apps/ios" element={<IosApp />} />
-            <Route path="/apps/android" element={<Android />} />
-            <Route path="/apps/harmonyos" element={<HarmonyOS />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/about" element={<About />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/apps/ios" element={<IosApp />} />
+              <Route path="/apps/android" element={<Android />} />
+              <Route path="/apps/harmonyos" element={<HarmonyOS />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/about" element={<About />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
         </div>
       </BrowserRouter>
     </TooltipProvider>
