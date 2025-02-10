@@ -1,5 +1,5 @@
 
-const HarmonyOS = () => {
+export const HarmonyOS = () => {
   return (
     <div className="min-h-screen bg-background p-8">
       <div className="relative">
@@ -34,5 +34,3 @@ const HarmonyOS = () => {
     </div>
   );
 };
-
-export default HarmonyOS;

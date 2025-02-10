@@ -1,5 +1,5 @@
 
-const Android = () => {
+export const Android = () => {
   return (
     <div className="min-h-screen bg-background p-8">
       <div className="relative">
@@ -34,5 +34,3 @@ const Android = () => {
     </div>
   );
 };
-
-export default Android;

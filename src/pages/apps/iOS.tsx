@@ -1,5 +1,5 @@
 
-const iOS = () => {
+export const iOS = () => {
   return (
     <div className="min-h-screen bg-background p-8">
       <div className="relative">
@@ -34,5 +34,3 @@ const iOS = () => {
     </div>
   );
 };
-
-export default iOS;
