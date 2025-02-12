@@ -126,37 +126,17 @@ export const Navbar = () => {
                   </Link>
                 ))}
                 <div className="pt-2 border-t">
-                  <button
-                    onClick={() => setIsAppsOpen(!isAppsOpen)}
-                    className="flex items-center justify-between w-full p-2 text-sm font-medium text-muted-foreground"
-                  >
-                    <div className="flex items-center space-x-2">
-                      <AppWindow className="h-4 w-4" />
-                      <span>Apps</span>
-                    </div>
-                    <ChevronDown className={cn(
-                      "h-4 w-4 transition-transform duration-200",
-                      isAppsOpen ? "rotate-180" : ""
-                    )} />
-                  </button>
-                  {isAppsOpen && (
-                    <div className="pl-4 space-y-2 mt-2">
-                      {appPages.map(({ path, label, icon: Icon }) => (
-                        <Link
-                          key={path}
-                          to={path}
-                          onClick={() => {
-                            setIsMobileMenuOpen(false);
-                            setIsAppsOpen(false);
-                          }}
-                          className="flex items-center space-x-2 p-2 rounded-lg hover:bg-secondary text-muted-foreground"
-                        >
-                          <Icon className="h-4 w-4" />
-                          <span>{label}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                  {appPages.map(({ path, label, icon: Icon }) => (
+                    <Link
+                      key={path}
+                      to={path}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center space-x-2 p-2 rounded-lg hover:bg-secondary text-muted-foreground"
+                    >
+                      <Icon className="h-4 w-4" />
+                      <span>{label}</span>
+                    </Link>
+                  ))}
                 </div>
                 <div className="pt-2 border-t">
                   <a 
