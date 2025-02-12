@@ -14,7 +14,8 @@ import { useState } from "react";
 export const Navbar = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isAppsOpen, setIsAppsOpen] = useState(false);
+  const [mobileAppsOpen, setMobileAppsOpen] = useState(false);
+  const [desktopAppsOpen, setDesktopAppsOpen] = useState(false);
 
   const navItems = [
     { path: "/", label: "Home", icon: House },
@@ -61,7 +62,7 @@ export const Navbar = () => {
                 </Link>
               ))}
 
-              <DropdownMenu open={isAppsOpen} onOpenChange={setIsAppsOpen}>
+              <DropdownMenu open={desktopAppsOpen} onOpenChange={setDesktopAppsOpen}>
                 <DropdownMenuTrigger 
                   className={cn(
                     "flex items-center space-x-1 text-sm font-medium transition-colors hover:text-primary cursor-pointer",
@@ -72,7 +73,7 @@ export const Navbar = () => {
                   <span className="mx-1">Apps</span>
                   <ChevronDown className={cn(
                     "h-4 w-4 transition-transform duration-200",
-                    isAppsOpen ? "rotate-180" : ""
+                    desktopAppsOpen ? "rotate-180" : ""
                   )} />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="center" className="bg-background border rounded-md shadow-md w-48">
@@ -81,7 +82,7 @@ export const Navbar = () => {
                       <Link 
                         to={path} 
                         className="flex items-center space-x-2 w-full px-4 py-2 hover:bg-secondary"
-                        onClick={() => setIsAppsOpen(false)}
+                        onClick={() => setDesktopAppsOpen(false)}
                       >
                         <Icon className="h-4 w-4" />
                         <span>{label}</span>
@@ -127,7 +128,7 @@ export const Navbar = () => {
                 ))}
                 <div className="pt-2 border-t">
                   <button
-                    onClick={() => setIsAppsOpen(!isAppsOpen)}
+                    onClick={() => setMobileAppsOpen(!mobileAppsOpen)}
                     className="flex items-center justify-between w-full p-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg"
                   >
                     <div className="flex items-center space-x-2">
@@ -136,10 +137,10 @@ export const Navbar = () => {
                     </div>
                     <ChevronDown className={cn(
                       "h-4 w-4 transition-transform duration-200",
-                      isAppsOpen ? "rotate-180" : ""
+                      mobileAppsOpen ? "rotate-180" : ""
                     )} />
                   </button>
-                  {isAppsOpen && (
+                  {mobileAppsOpen && (
                     <div className="pl-4 space-y-2 mt-2">
                       {appPages.map(({ path, label, icon: Icon }) => (
                         <Link
@@ -147,7 +148,7 @@ export const Navbar = () => {
                           to={path}
                           onClick={() => {
                             setIsMobileMenuOpen(false);
-                            setIsAppsOpen(false);
+                            setMobileAppsOpen(false);
                           }}
                           className="flex items-center space-x-2 p-2 rounded-lg hover:bg-secondary text-muted-foreground"
                         >
