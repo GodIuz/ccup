@@ -69,16 +69,20 @@ export const Navbar = () => {
                   )}
                 >
                   <AppWindow className="h-4 w-4" />
-                  <span>Apps</span>
+                  <span className="mx-1">Apps</span>
                   <ChevronDown className={cn(
                     "h-4 w-4 transition-transform duration-200",
                     isAppsOpen ? "rotate-180" : ""
                   )} />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="center">
+                <DropdownMenuContent align="center" className="bg-background border rounded-md shadow-md w-48">
                   {appPages.map(({ path, label, icon: Icon }) => (
                     <DropdownMenuItem key={path} asChild>
-                      <Link to={path} className="flex items-center space-x-2 w-full">
+                      <Link 
+                        to={path} 
+                        className="flex items-center space-x-2 w-full px-4 py-2 hover:bg-secondary"
+                        onClick={() => setIsAppsOpen(false)}
+                      >
                         <Icon className="h-4 w-4" />
                         <span>{label}</span>
                       </Link>
@@ -141,7 +145,10 @@ export const Navbar = () => {
                         <Link
                           key={path}
                           to={path}
-                          onClick={() => setIsMobileMenuOpen(false)}
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            setIsAppsOpen(false);
+                          }}
                           className="flex items-center space-x-2 p-2 rounded-lg hover:bg-secondary text-muted-foreground"
                         >
                           <Icon className="h-4 w-4" />
@@ -172,4 +179,3 @@ export const Navbar = () => {
     </nav>
   );
 };
-
