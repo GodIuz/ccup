@@ -1,6 +1,7 @@
 
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
@@ -17,9 +18,11 @@ export const Hero = () => {
             Experience the future of financial management with AI-powered insights, real-time analytics, and predictive forecasting. Join thousands of businesses making smarter financial decisions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="group">
-              Start Your Free Trial
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <Button asChild size="lg" className="group w-full sm:w-auto">
+              <Link to="/pricing">
+                Explore Pricing
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </Button>
           </div>
         </div>
