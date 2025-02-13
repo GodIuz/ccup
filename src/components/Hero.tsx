@@ -21,9 +21,6 @@ export const Hero = () => {
               Start Your Free Trial
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button size="lg" variant="outline">
-              See How It Works
-            </Button>
           </div>
         </div>
       </div>
