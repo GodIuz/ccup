@@ -1,12 +1,9 @@
-
 import { useEffect } from "react";
 
 export const IosApp = () => {
   useEffect(() => {
-    // Add smooth scrolling behavior
     document.documentElement.style.scrollBehavior = 'smooth';
-
-    // Create intersection observer for animations
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -23,7 +20,6 @@ export const IosApp = () => {
       }
     );
 
-    // Observe all animated elements
     document.querySelectorAll('[data-animate]').forEach((el) => {
       observer.observe(el);
     });
@@ -37,7 +33,7 @@ export const IosApp = () => {
   return (
     <div className="min-h-screen bg-background p-8">
       <div className="max-w-6xl mx-auto space-y-12">
-        <div className="relative" data-animate className="opacity-0 translate-y-8 transition-all duration-700 ease-out">
+        <div className="relative opacity-0 translate-y-8 transition-all duration-700 ease-out" data-animate>
           <span className="absolute -top-2 right-0 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
             Coming Soon
           </span>
@@ -47,7 +43,7 @@ export const IosApp = () => {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3" data-animate className="opacity-0 translate-y-8 transition-all duration-700 ease-out">
+        <div className="grid gap-6 md:grid-cols-3 opacity-0 translate-y-8 transition-all duration-700 ease-out" data-animate>
           <div className="p-6 bg-secondary rounded-lg">
             <h3 className="text-xl font-semibold mb-3">Native Experience</h3>
             <p className="text-muted-foreground">
@@ -68,7 +64,7 @@ export const IosApp = () => {
           </div>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 mt-12" data-animate className="opacity-0 translate-y-8 transition-all duration-700 ease-out">
+        <div className="grid gap-8 md:grid-cols-2 mt-12 opacity-0 translate-y-8 transition-all duration-700 ease-out" data-animate>
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">iOS-Specific Features</h2>
             <ul className="space-y-3">
