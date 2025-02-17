@@ -6,12 +6,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { CookieBanner } from "@/components/CookieBanner";
 import Index from "./pages/Index";
 import { IosApp } from "./pages/apps/IosApp";
 import { Android } from "./pages/apps/Android";
 import { HarmonyOS } from "./pages/apps/HarmonyOS";
 import Pricing from "./pages/Pricing";
 import About from "./pages/About";
+import CookiePolicy from "./pages/CookiePolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,10 +34,12 @@ const App = () => (
               <Route path="/apps/harmonyos" element={<HarmonyOS />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/about" element={<About />} />
+              <Route path="/cookie-policy" element={<CookiePolicy />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <Footer />
+          <CookieBanner />
         </div>
       </BrowserRouter>
     </TooltipProvider>

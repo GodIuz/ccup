@@ -33,7 +33,7 @@ export const Footer = () => {
                   <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Terms</a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Security</a>
+                  <Link to="/cookie-policy" className="text-muted-foreground hover:text-foreground transition-colors">Cookie Policy</Link>
                 </li>
               </ul>
             </div>
