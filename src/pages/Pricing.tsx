@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const PricingTier = ({ title, price, features, isPopular = false, isPro = false }) => (
   <div 
     className={`p-8 rounded-2xl opacity-0 translate-y-8 transition-all duration-700 ease-out ${
-      isPopular ? 'border-2 border-primary shadow-lg' : 'border'
+      isPopular ? 'border-2 border-[#0FA0CE] shadow-lg' : 'border'
     } bg-background`}
     data-pricing-tier
   >
@@ -18,12 +18,16 @@ const PricingTier = ({ title, price, features, isPopular = false, isPro = false 
     <ul className="space-y-3 mb-8">
       {features.map((feature, index) => (
         <li key={index} className="flex items-center gap-2">
-          <Check className="h-5 w-5 text-primary" />
+          <Check className="h-5 w-5 text-[#0FA0CE]" />
           <span>{feature}</span>
         </li>
       ))}
     </ul>
-    <Button className="w-full" variant={isPro ? "default" : "outline"}>
+    <Button 
+      className={`w-full ${isPro ? 'bg-[#0FA0CE] hover:bg-[#1EAEDB]' : 'border-[#0FA0CE] text-[#0FA0CE] hover:bg-[#0FA0CE]/10'}`}
+      variant={isPro ? "default" : "outline"}
+      onClick={() => window.open('https://google.com', '_blank')}
+    >
       Get Started
     </Button>
   </div>
