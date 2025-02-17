@@ -27,7 +27,7 @@ export const Features = () => {
     <section className="py-24 bg-white">
       <div className="container px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0FA0CE]">
             Everything You Need to Succeed
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -38,11 +38,11 @@ export const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl bg-secondary hover:shadow-lg transition-shadow duration-300 animate-fadeIn"
+              className="p-6 rounded-xl bg-[#F3F6FC] hover:shadow-lg transition-all duration-300 animate-fadeIn hover:scale-105 border border-[#0FA0CE]/10"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <feature.icon className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+              <feature.icon className="h-12 w-12 text-[#0FA0CE] mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-[#0FA0CE]">{feature.title}</h3>
               <p className="text-muted-foreground">{feature.description}</p>
             </div>
           ))}
