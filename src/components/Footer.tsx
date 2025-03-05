@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className="bg-secondary py-8">
       <div className="container px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
           <div>
             <h3 className="font-semibold mb-4">Product</h3>
             <div className="flex items-center justify-between">
@@ -40,30 +40,14 @@ export const Footer = () => {
             </div>
           </div>
           <div>
-            <h3 className="font-semibold mb-4">Resources</h3>
-            <div className="flex items-center justify-between">
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Documentation</a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">API</a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Support</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
             <h3 className="font-semibold mb-4">Legal</h3>
             <div className="flex items-center justify-between">
               <ul className="space-y-2">
                 <li>
-                  <Link to="/privacy-terms" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link>
+                  <Link to="/privacy-policy" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link>
                 </li>
                 <li>
-                  <Link to="/privacy-terms" className="text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link>
+                  <Link to="/terms-of-service" className="text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link>
                 </li>
                 <li>
                   <Link to="/cookie-policy" className="text-muted-foreground hover:text-foreground transition-colors">Cookie Policy</Link>

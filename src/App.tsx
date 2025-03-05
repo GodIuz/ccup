@@ -15,7 +15,8 @@ import Pricing from "./pages/Pricing";
 import About from "./pages/About";
 import CookiePolicy from "./pages/CookiePolicy";
 import NotFound from "./pages/NotFound";
-import PrivacyTerms from "./pages/PrivacyTerms";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 import FeaturePage from "./pages/Features";
 
 const queryClient = new QueryClient();
@@ -37,7 +38,8 @@ const App = () => (
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/about" element={<About />} />
               <Route path="/cookie-policy" element={<CookiePolicy />} />
-              <Route path="/privacy-terms" element={<PrivacyTerms />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/features" element={<FeaturePage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
