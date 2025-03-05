@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { House, AppWindow, DollarSign, Info, LogIn, Smartphone, Menu, ChevronDown, Shield, ChartBar } from "lucide-react";
+import { House, AppWindow, DollarSign, Info, LogIn, Smartphone, Menu, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,10 +19,8 @@ export const Navbar = () => {
 
   const navItems = [
     { path: "/", label: "Home", icon: House },
-    { path: "/features", label: "Features", icon: ChartBar },
     { path: "/pricing", label: "Pricing", icon: DollarSign },
     { path: "/about", label: "About", icon: Info },
-    { path: "/privacy-terms", label: "Privacy & Terms", icon: Shield },
   ];
 
   const appPages = [
