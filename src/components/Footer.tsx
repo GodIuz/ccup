@@ -6,19 +6,51 @@ export const Footer = () => {
   return (
     <footer className="bg-secondary py-8">
       <div className="container px-4">
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
           <div>
             <h3 className="font-semibold mb-4">Product</h3>
             <div className="flex items-center justify-between">
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Features</a>
+                  <Link to="/features" className="text-muted-foreground hover:text-foreground transition-colors">Features</Link>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+                  <Link to="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">Pricing</Link>
                 </li>
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Demo</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-4">Company</h3>
+            <div className="flex items-center justify-between">
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">About Us</Link>
+                </li>
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Blog</a>
+                </li>
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Careers</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-4">Resources</h3>
+            <div className="flex items-center justify-between">
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Documentation</a>
+                </li>
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">API</a>
+                </li>
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Support</a>
                 </li>
               </ul>
             </div>
@@ -28,10 +60,10 @@ export const Footer = () => {
             <div className="flex items-center justify-between">
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Privacy</a>
+                  <Link to="/privacy-terms" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Terms</a>
+                  <Link to="/privacy-terms" className="text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link>
                 </li>
                 <li>
                   <Link to="/cookie-policy" className="text-muted-foreground hover:text-foreground transition-colors">Cookie Policy</Link>
