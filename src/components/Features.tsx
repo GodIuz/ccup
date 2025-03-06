@@ -1,5 +1,5 @@
 
-import { ChartBar, DollarSign, Building, ArrowRight, LineChart, ShieldCheck, Database, Layers, Briefcase, Zap } from "lucide-react";
+import { ChartBar, DollarSign, Building, ArrowRight, LineChart, ShieldCheck, Database, Layers, Briefcase, Zap, Cloud, Users, Lock, Bell, FileText, Clock, Award, CreditCard } from "lucide-react";
 import { Button } from "./ui/button";
 import {
   Tooltip,
@@ -26,6 +26,14 @@ const features = [
     category: "Analysis",
   },
   {
+    icon: Bell,
+    title: "Smart Alerts",
+    description:
+      "Receive timely notifications for unusual patterns or critical business thresholds.",
+    tooltip: "Customizable alert system for business metrics",
+    category: "Analysis",
+  },
+  {
     icon: DollarSign,
     title: "Financial Tracking",
     description:
@@ -42,6 +50,14 @@ const features = [
     category: "Finance",
   },
   {
+    icon: CreditCard,
+    title: "Payment Integration",
+    description:
+      "Seamlessly connect with payment processors and banking systems for financial automation.",
+    tooltip: "Multiple payment gateway integrations",
+    category: "Finance",
+  },
+  {
     icon: Building,
     title: "Business Intelligence",
     description:
@@ -55,6 +71,14 @@ const features = [
     description:
       "Stay compliant with regulations and industry standards with automated checks and alerts.",
     tooltip: "Automated compliance monitoring and reporting",
+    category: "Intelligence",
+  },
+  {
+    icon: Users,
+    title: "Competitor Analysis",
+    description:
+      "Track and analyze your competitors' performance to stay ahead in the market.",
+    tooltip: "Comprehensive market and competitor intelligence tools",
     category: "Intelligence",
   },
   {
@@ -81,6 +105,46 @@ const features = [
     tooltip: "Custom automation rules for business processes",
     category: "Additional",
   },
+  {
+    icon: Cloud,
+    title: "Cloud Infrastructure",
+    description:
+      "Enterprise-grade cloud hosting with 99.9% uptime guarantee for your business data.",
+    tooltip: "Reliable and scalable cloud infrastructure",
+    category: "Additional",
+  },
+  {
+    icon: Lock,
+    title: "Advanced Security",
+    description:
+      "Multi-factor authentication and enterprise-grade security protocols to protect your data.",
+    tooltip: "Best-in-class security measures for business applications",
+    category: "Additional",
+  },
+  {
+    icon: FileText,
+    title: "Custom Reports",
+    description:
+      "Generate detailed, customizable reports on any aspect of your business performance.",
+    tooltip: "Flexible reporting engine with export capabilities",
+    category: "Additional",
+  },
+  {
+    icon: Clock,
+    title: "Time-Saving Tools",
+    description:
+      "Streamline workflows and reduce manual tasks with intelligent automation.",
+    tooltip: "Efficiency-focused tools designed for busy professionals",
+    category: "Additional",
+  },
+  {
+    icon: Award,
+    title: "Industry Benchmarks",
+    description:
+      "Compare your performance against industry standards and top performers.",
+    tooltip: "Comprehensive industry benchmarking database",
+    category: "Additional",
+  },
 ];
 
 export const Features = () => {
@@ -98,7 +162,7 @@ export const Features = () => {
             Everything You Need to Succeed
           </h2>
           <p className="text-muted-foreground text-lg">
-            Powerful tools to help you monitor, analyze, and improve your company's financial health.
+            Comprehensive tools to help you monitor, analyze, and transform your company's financial health and performance.
           </p>
         </div>
 

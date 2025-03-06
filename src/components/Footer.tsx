@@ -78,6 +78,10 @@ export const Footer = () => {
                 <Youtube className="h-4 w-4 mr-2" />
                 YouTube
               </a>
+              <a href="#" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+                <Github className="h-4 w-4 mr-2" />
+                GitHub
+              </a>
             </div>
           </div>
         </div>
