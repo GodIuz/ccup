@@ -4,10 +4,18 @@ import {
   ChartBar, 
   TrendingUp, 
   Users, 
-  Search, 
+  BarChart4, 
+  PieChart,
+  LineChart,
   PackagePlus, 
   ArrowUpRight,
-  CheckCircle 
+  CheckCircle,
+  Database,
+  Lock,
+  Globe,
+  Layers,
+  Cpu,
+  Zap
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -24,19 +32,56 @@ import { Stats } from "@/components/Stats";
 
 // Sample analytical data
 const analyticsData = [
-  { metric: "User Growth", value: 127, previousValue: 98, unit: "%", trend: "up" },
-  { metric: "Data Processed", value: 3.4, previousValue: 2.1, unit: "TB", trend: "up" },
-  { metric: "Average Session", value: 8.2, previousValue: 5.4, unit: "min", trend: "up" },
-  { metric: "ROI Improvement", value: 43, previousValue: 31, unit: "%", trend: "up" },
+  { metric: "Data Insights", value: 147, previousValue: 98, unit: "%", trend: "up" },
+  { metric: "Performance", value: 3.4, previousValue: 2.1, unit: "x", trend: "up" },
+  { metric: "ROI Increase", value: 58.2, previousValue: 32.4, unit: "%", trend: "up" },
+  { metric: "Cost Reduction", value: 43, previousValue: 31, unit: "%", trend: "up" },
 ];
 
-// Feature comparison data
+// Feature comparison data with competition
 const comparisonFeatures = [
   { feature: "Data Sources", competitors: 5, us: 15 },
   { feature: "Analytical Models", competitors: 8, us: 22 },
-  { feature: "Reporting Options", competitors: 12, us: 30 },
-  { feature: "Update Frequency", competitors: 4, us: 12 },
+  { feature: "Real-time Dashboards", competitors: 4, us: 12 },
+  { feature: "AI Predictions", competitors: 3, us: 18 },
   { feature: "Integration APIs", competitors: 10, us: 25 },
+];
+
+// Advanced analytics features
+const analyticsFeatures = [
+  {
+    title: "Predictive Analytics",
+    icon: LineChart,
+    description: "Forecast future trends with AI-powered predictive models.",
+    features: [
+      "Machine learning algorithms",
+      "Trend forecasting",
+      "Anomaly detection",
+      "Custom prediction models"
+    ]
+  },
+  {
+    title: "Business Intelligence",
+    icon: PieChart,
+    description: "Transform raw data into actionable business insights.",
+    features: [
+      "Interactive dashboards",
+      "Custom reports",
+      "KPI tracking",
+      "Decision support systems"
+    ]
+  },
+  {
+    title: "Data Visualization",
+    icon: BarChart4,
+    description: "Visual representation of complex data patterns and trends.",
+    features: [
+      "Interactive charts and graphs",
+      "Custom visualizations",
+      "Real-time data updates",
+      "Shareable insights"
+    ]
+  }
 ];
 
 const FeaturePage = () => {
@@ -101,10 +146,10 @@ const FeaturePage = () => {
       <section className="py-20 bg-gradient-to-br from-[#0FA0CE] to-[#1EAEDB] text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Data-Driven Intelligence for Your Business
+            Analytical Intelligence for Business Growth
           </h1>
           <p className="text-xl max-w-3xl mx-auto mb-10 text-white/90">
-            Advanced analytics and insights that propel your business forward with actionable intelligence.
+            Transform your business data into actionable insights with our comprehensive analytics platform.
           </p>
           <Button 
             size="lg" 
@@ -114,7 +159,7 @@ const FeaturePage = () => {
           </Button>
           <div className="mt-10">
             <Progress value={progress} className="w-full max-w-md mx-auto h-2 bg-white/20" />
-            <p className="mt-2 text-white/80 text-sm">Powering {progress}% of Fortune 500 analytics</p>
+            <p className="mt-2 text-white/80 text-sm">Trusted by {progress}% of Fortune 500 analytics teams</p>
           </div>
         </div>
       </section>
@@ -124,10 +169,10 @@ const FeaturePage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0FA0CE]">
-              Supercharge Your Analytics
+              Measurable Results with Data Analytics
             </h2>
             <p className="text-muted-foreground text-lg">
-              Our platform delivers powerful insights that drive measurable business growth.
+              Our platform delivers powerful insights that drive measurable business growth and ROI.
             </p>
           </div>
 
@@ -139,7 +184,7 @@ const FeaturePage = () => {
                     {index === 0 ? <TrendingUp className="h-5 w-5" /> : 
                      index === 1 ? <ChartBar className="h-5 w-5" /> :
                      index === 2 ? <Users className="h-5 w-5" /> :
-                     <Search className="h-5 w-5" />}
+                     <LineChart className="h-5 w-5" />}
                     {item.metric}
                   </CardTitle>
                 </CardHeader>
@@ -159,7 +204,7 @@ const FeaturePage = () => {
 
           {/* Feature Comparison */}
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-6 text-center">How We Compare</h3>
+            <h3 className="text-2xl font-bold mb-6 text-center">Why Choose Our Analytics Platform</h3>
             <div className="bg-gray-50 rounded-lg p-6 border border-gray-100">
               <div className="grid grid-cols-3 gap-4 mb-4 font-semibold text-[#0FA0CE]">
                 <div>Feature</div>
@@ -181,8 +226,46 @@ const FeaturePage = () => {
         </div>
       </section>
 
-      {/* Core Features */}
+      {/* Advanced Analytics Section */}
       <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0FA0CE]">
+              Advanced Analytics Suite
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Comprehensive tools that help you understand your data and make better business decisions.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {analyticsFeatures.map((feature, index) => (
+              <Card key={index} className="border-2 border-[#0FA0CE]/10 hover:border-[#0FA0CE]/30 transition-all duration-300">
+                <CardHeader>
+                  <div className="mb-4">
+                    <feature.icon className="h-12 w-12 text-[#0FA0CE]" />
+                  </div>
+                  <CardTitle>{feature.title}</CardTitle>
+                  <CardDescription>{feature.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {feature.features.map((item, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Core Features */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0FA0CE]">
@@ -299,6 +382,62 @@ const FeaturePage = () => {
               </Card>
             </TabsContent>
           </Tabs>
+        </div>
+      </section>
+
+      {/* Technical Features */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0FA0CE]">
+              Technical Excellence
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Built on enterprise-grade technology for reliability, security, and performance.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <Card className="border border-[#0FA0CE]/10">
+              <CardHeader>
+                <Database className="h-10 w-10 text-[#0FA0CE] mb-2" />
+                <CardTitle className="text-lg">Data Security</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Enterprise-grade security with encryption at rest and in transit.</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border border-[#0FA0CE]/10">
+              <CardHeader>
+                <Globe className="h-10 w-10 text-[#0FA0CE] mb-2" />
+                <CardTitle className="text-lg">Global Infrastructure</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Distributed infrastructure for low-latency access worldwide.</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border border-[#0FA0CE]/10">
+              <CardHeader>
+                <Layers className="h-10 w-10 text-[#0FA0CE] mb-2" />
+                <CardTitle className="text-lg">Scalable Architecture</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Built to scale with your business from startups to enterprises.</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border border-[#0FA0CE]/10">
+              <CardHeader>
+                <Cpu className="h-10 w-10 text-[#0FA0CE] mb-2" />
+                <CardTitle className="text-lg">AI Integration</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Seamless integration with cutting-edge AI and ML technologies.</p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 

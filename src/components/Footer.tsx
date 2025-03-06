@@ -1,12 +1,12 @@
 
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, Youtube, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
     <footer className="bg-secondary py-8">
       <div className="container px-4">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
           <div>
             <h3 className="font-semibold mb-4">Product</h3>
             <div className="flex items-center justify-between">
@@ -55,22 +55,33 @@ export const Footer = () => {
               </ul>
             </div>
           </div>
+          <div>
+            <h3 className="font-semibold mb-4">Social</h3>
+            <div className="flex flex-col space-y-3">
+              <a href="#" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+                <Facebook className="h-4 w-4 mr-2" />
+                Facebook
+              </a>
+              <a href="#" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+                <Twitter className="h-4 w-4 mr-2" />
+                Twitter
+              </a>
+              <a href="#" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+                <Linkedin className="h-4 w-4 mr-2" />
+                LinkedIn
+              </a>
+              <a href="#" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+                <Instagram className="h-4 w-4 mr-2" />
+                Instagram
+              </a>
+              <a href="#" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+                <Youtube className="h-4 w-4 mr-2" />
+                YouTube
+              </a>
+            </div>
+          </div>
         </div>
         <div className="mt-8 text-center">
-          <div className="flex justify-center space-x-4 mb-4">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Facebook className="h-4 w-4" />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Twitter className="h-4 w-4" />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Linkedin className="h-4 w-4" />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Instagram className="h-4 w-4" />
-            </a>
-          </div>
           <p className="text-muted-foreground">&copy; {new Date().getFullYear()} Company Check-Up. All rights reserved.</p>
         </div>
       </div>
