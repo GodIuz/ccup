@@ -1,5 +1,5 @@
 
-import { Facebook, Twitter, Linkedin, Instagram, Youtube, Github } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
@@ -29,12 +29,6 @@ export const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">About Us</Link>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Blog</a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Careers</a>
                 </li>
               </ul>
             </div>
@@ -67,20 +61,12 @@ export const Footer = () => {
                 Twitter
               </a>
               <a href="#" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
-                <Linkedin className="h-4 w-4 mr-2" />
-                LinkedIn
-              </a>
-              <a href="#" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
                 <Instagram className="h-4 w-4 mr-2" />
                 Instagram
               </a>
               <a href="#" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
                 <Youtube className="h-4 w-4 mr-2" />
                 YouTube
-              </a>
-              <a href="#" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
-                <Github className="h-4 w-4 mr-2" />
-                GitHub
               </a>
             </div>
           </div>
