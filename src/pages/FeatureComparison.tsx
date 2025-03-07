@@ -1,4 +1,5 @@
 
+import React from "react";
 import { Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -169,7 +170,7 @@ const FeatureComparison = () => {
                         <td className="px-4 py-3 text-left">{feature}</td>
                         {plans.map((plan, planIndex) => (
                           <td key={planIndex} className="px-4 py-3 text-center">
-                            {plan.features[category.id].includes(feature) ? (
+                            {plan.features[category.id].includes(feature as string) ? (
                               <Check className="h-5 w-5 text-[#0FA0CE] mx-auto" />
                             ) : (
                               <X className="h-5 w-5 text-muted-foreground mx-auto" />
@@ -202,13 +203,31 @@ const FeatureComparison = () => {
 };
 
 // Helper function to get unique features across all plans for a category
-const getUniqueFeatures = (plans, categoryId) => {
+const getUniqueFeatures = (plans: any[], categoryId: string): string[] => {
   const allFeatures = plans.flatMap(plan => plan.features[categoryId]);
   return [...new Set(allFeatures)];
 };
 
 // Plan Card Component
-const PlanCard = ({ plan, price, featureCategories }) => (
+interface PlanCardProps {
+  plan: {
+    title: string;
+    description: string;
+    popular: boolean;
+    color: string;
+    features: {
+      [key: string]: string[];
+    };
+    cta: string;
+  };
+  price: string;
+  featureCategories: {
+    name: string;
+    id: string;
+  }[];
+}
+
+const PlanCard: React.FC<PlanCardProps> = ({ plan, price, featureCategories }) => (
   <Card className={`feature-card opacity-0 translate-y-8 transition-all duration-700 ease-out 
                    ${plan.popular ? 'border-2 border-[#0FA0CE] shadow-lg' : 'border'} 
                    ${plan.color}`}>
