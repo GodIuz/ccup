@@ -155,7 +155,7 @@ export const Features = () => {
   const additionalFeatures = features.filter(f => f.category === "Additional");
 
   return (
-    <section className="py-24 bg-white" role="region" aria-label="Features">
+    <section className="py-24 bg-[#f5f9fc]" role="region" aria-label="Features">
       <div className="container px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0FA0CE]">
@@ -166,10 +166,10 @@ export const Features = () => {
           </p>
         </div>
 
-        {/* Excel-like grid header */}
+        {/* Feature Categories Header */}
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-4">
           {["Analysis Tools", "Financial Solutions", "Business Tools"].map((header) => (
-            <div key={header} className="text-sm font-medium text-[#0FA0CE] border-b border-[#0FA0CE]/20 pb-2">
+            <div key={header} className="text-sm font-medium text-[#0FA0CE] pb-2">
               {header}
             </div>
           ))}
@@ -220,26 +220,23 @@ const FeatureCard = ({ feature }) => (
     <Tooltip>
       <TooltipTrigger asChild>
         <div
-          className="p-6 rounded-xl bg-[#F3F6FC] hover:shadow-lg transition-all duration-300 
-                   animate-fadeIn hover:scale-105 border border-[#0FA0CE]/10 
-                   focus:outline-none focus:ring-2 focus:ring-[#0FA0CE] focus:ring-offset-2
-                   cursor-pointer relative group"
+          className="p-6 rounded-xl bg-white hover:shadow-md transition-all duration-300 
+                   border border-gray-100
+                   focus:outline-none focus:ring-1 focus:ring-[#0FA0CE] 
+                   cursor-pointer"
           role="button"
           tabIndex={0}
         >
-          {/* Excel-like selection overlay */}
-          <div className="absolute inset-0 border-2 border-[#0FA0CE] opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
-          
-          <feature.icon className="h-12 w-12 text-[#0FA0CE] mb-4" />
-          <h3 className="text-xl font-semibold mb-2 text-[#0FA0CE]">{feature.title}</h3>
-          <p className="text-muted-foreground mb-4">{feature.description}</p>
+          <feature.icon className="h-10 w-10 text-[#0FA0CE] mb-4" />
+          <h3 className="text-lg font-semibold mb-2 text-gray-800">{feature.title}</h3>
+          <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
           
           <Button
             variant="link"
-            className="text-[#0FA0CE] p-0 hover:text-[#1EAEDB] group/button flex items-center"
+            className="text-[#0FA0CE] p-0 hover:text-[#1EAEDB] text-sm flex items-center"
           >
             Learn more
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/button:translate-x-1" />
+            <ArrowRight className="ml-1 h-3 w-3" />
           </Button>
         </div>
       </TooltipTrigger>
