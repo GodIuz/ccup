@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { House, AppWindow, DollarSign, Info, LogIn, Smartphone, Menu, ChevronDown } from "lucide-react";
+import { House, AppWindow, DollarSign, Info, LogIn, Smartphone, Menu, ChevronDown, PieChart } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,6 +16,8 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileAppsOpen, setMobileAppsOpen] = useState(false);
   const [desktopAppsOpen, setDesktopAppsOpen] = useState(false);
+  const [mobileFeatureOpen, setMobileFeatureOpen] = useState(false);
+  const [desktopFeatureOpen, setDesktopFeatureOpen] = useState(false);
 
   const navItems = [
     { path: "/", label: "Home", icon: House },
@@ -27,6 +29,11 @@ export const Navbar = () => {
     { path: "/apps/ios", label: "iOS", icon: Smartphone },
     { path: "/apps/android", label: "Android", icon: Smartphone },
     { path: "/apps/harmonyos", label: "HarmonyOS", icon: Smartphone },
+  ];
+
+  const featurePages = [
+    { path: "/features", label: "All Features", icon: PieChart },
+    { path: "/feature-comparison", label: "Plan Comparison", icon: PieChart },
   ];
 
   return (
@@ -62,6 +69,38 @@ export const Navbar = () => {
                 </Link>
               ))}
 
+              {/* Features Dropdown */}
+              <DropdownMenu open={desktopFeatureOpen} onOpenChange={setDesktopFeatureOpen}>
+                <DropdownMenuTrigger 
+                  className={cn(
+                    "flex items-center space-x-1 text-sm font-medium transition-colors hover:text-primary cursor-pointer",
+                    location.pathname.startsWith("/feature") ? "text-primary" : "text-muted-foreground"
+                  )}
+                >
+                  <PieChart className="h-4 w-4" />
+                  <span className="mx-1">Features</span>
+                  <ChevronDown className={cn(
+                    "h-4 w-4 transition-transform duration-200",
+                    desktopFeatureOpen ? "rotate-180" : ""
+                  )} />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="center" className="bg-background border rounded-md shadow-md w-48">
+                  {featurePages.map(({ path, label, icon: Icon }) => (
+                    <DropdownMenuItem key={path} asChild>
+                      <Link 
+                        to={path} 
+                        className="flex items-center space-x-2 w-full px-4 py-2 hover:bg-secondary"
+                        onClick={() => setDesktopFeatureOpen(false)}
+                      >
+                        <Icon className="h-4 w-4" />
+                        <span>{label}</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              {/* Apps Dropdown */}
               <DropdownMenu open={desktopAppsOpen} onOpenChange={setDesktopAppsOpen}>
                 <DropdownMenuTrigger 
                   className={cn(
@@ -126,6 +165,43 @@ export const Navbar = () => {
                     <span>{label}</span>
                   </Link>
                 ))}
+                
+                {/* Mobile Features Menu */}
+                <div className="pt-2 border-t">
+                  <button
+                    onClick={() => setMobileFeatureOpen(!mobileFeatureOpen)}
+                    className="flex items-center justify-between w-full p-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg"
+                  >
+                    <div className="flex items-center space-x-2">
+                      <PieChart className="h-4 w-4" />
+                      <span>Features</span>
+                    </div>
+                    <ChevronDown className={cn(
+                      "h-4 w-4 transition-transform duration-200",
+                      mobileFeatureOpen ? "rotate-180" : ""
+                    )} />
+                  </button>
+                  {mobileFeatureOpen && (
+                    <div className="pl-4 space-y-2 mt-2">
+                      {featurePages.map(({ path, label, icon: Icon }) => (
+                        <Link
+                          key={path}
+                          to={path}
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            setMobileFeatureOpen(false);
+                          }}
+                          className="flex items-center space-x-2 p-2 rounded-lg hover:bg-secondary text-muted-foreground"
+                        >
+                          <Icon className="h-4 w-4" />
+                          <span>{label}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Mobile Apps Menu */}
                 <div className="pt-2 border-t">
                   <button
                     onClick={() => setMobileAppsOpen(!mobileAppsOpen)}
@@ -159,6 +235,7 @@ export const Navbar = () => {
                     </div>
                   )}
                 </div>
+                
                 <div className="pt-2 border-t">
                   <a 
                     href="https://my.ccup.app" 

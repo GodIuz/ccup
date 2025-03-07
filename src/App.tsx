@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import FeaturePage from "./pages/Features";
+import FeatureComparison from "./pages/FeatureComparison";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const App = () => (
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/features" element={<FeaturePage />} />
+              <Route path="/feature-comparison" element={<FeatureComparison />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
