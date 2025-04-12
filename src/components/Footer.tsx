@@ -1,3 +1,4 @@
+
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -8,54 +9,48 @@ export const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
           <div>
             <h3 className="font-semibold mb-4">Product</h3>
-            <div className="flex items-center justify-between">
-              <ul className="space-y-2">
-                <li>
-                  <Link to="/features" className="text-muted-foreground hover:text-foreground transition-colors">Features</Link>
-                </li>
-                <li>
-                  <Link to="/feature-comparison" className="text-muted-foreground hover:text-foreground transition-colors">Compare Plans</Link>
-                </li>
-                <li>
-                  <Link to="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">Pricing</Link>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Demo</a>
-                </li>
-              </ul>
-            </div>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/features" className="text-muted-foreground hover:text-foreground transition-colors">Features</Link>
+              </li>
+              <li>
+                <Link to="/feature-comparison" className="text-muted-foreground hover:text-foreground transition-colors">Compare Plans</Link>
+              </li>
+              <li>
+                <Link to="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">Pricing</Link>
+              </li>
+              <li>
+                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Demo</a>
+              </li>
+            </ul>
           </div>
           <div>
             <h3 className="font-semibold mb-4">Company</h3>
-            <div className="flex items-center justify-between">
-              <ul className="space-y-2">
-                <li>
-                  <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">About Us</Link>
-                </li>
-                <li>
-                  <Link to="/features" className="text-muted-foreground hover:text-foreground transition-colors">Why Choose Us</Link>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Testimonials</a>
-                </li>
-              </ul>
-            </div>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">About Us</Link>
+              </li>
+              <li>
+                <Link to="/features" className="text-muted-foreground hover:text-foreground transition-colors">Why Choose Us</Link>
+              </li>
+              <li>
+                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Testimonials</a>
+              </li>
+            </ul>
           </div>
           <div>
             <h3 className="font-semibold mb-4">Legal</h3>
-            <div className="flex items-center justify-between">
-              <ul className="space-y-2">
-                <li>
-                  <Link to="/privacy-policy" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link>
-                </li>
-                <li>
-                  <Link to="/terms-of-service" className="text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link>
-                </li>
-                <li>
-                  <Link to="/cookie-policy" className="text-muted-foreground hover:text-foreground transition-colors">Cookie Policy</Link>
-                </li>
-              </ul>
-            </div>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/privacy-policy" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link to="/terms-of-service" className="text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link>
+              </li>
+              <li>
+                <Link to="/cookie-policy" className="text-muted-foreground hover:text-foreground transition-colors">Cookie Policy</Link>
+              </li>
+            </ul>
           </div>
           <div>
             <h3 className="font-semibold mb-4">Social</h3>
